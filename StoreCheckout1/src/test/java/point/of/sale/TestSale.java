@@ -8,6 +8,7 @@ import point.of.sale.*;
 
 public class TestSale {
 	
+		
 	@Before
 	public void setUp() throws Exception{
 		
@@ -15,7 +16,10 @@ public class TestSale {
 
 	@Test
 	public void testScan() {
-		Sale sale = new Sale();
+		
+		Display display = new FakeDisplay();
+		
+		Sale sale = new Sale(display);
 		
 		sale.Scan("A1");
 	}
