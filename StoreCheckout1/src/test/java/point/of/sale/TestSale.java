@@ -17,11 +17,12 @@ public class TestSale {
 	@Test
 	public void testScan() {
 		
-		Display display = new FakeDisplay();
+		FakeDisplay display = new FakeDisplay();
 		
 		Sale sale = new Sale(display);
 		
 		sale.Scan("A1");
+		assertEquals("Milk, 3.99" , display.getLastline());
 	}
 
 }

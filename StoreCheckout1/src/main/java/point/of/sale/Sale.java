@@ -32,8 +32,8 @@ public class Sale {
 	public void Scan(String barcode) {
 		
 			display.showLine(barcode);			
-			//String item = hashLookUp.barcode(barcode);			
-			//display.showLine(barcode);
+			String item = hashLookUp.barcode(barcode);			
+			display.showLine(item);
 		
 	}
 }
