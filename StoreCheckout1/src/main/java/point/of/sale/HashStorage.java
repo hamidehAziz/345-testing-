@@ -14,9 +14,9 @@ public class HashStorage {
 	}
 	
 	public String barcode(String barcode) {
-		hashMap.get(barcode);
-		
-		return barcode;
+				
+		return hashMap.get(barcode);
+
 	}
 
 }

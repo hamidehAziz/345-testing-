@@ -29,7 +29,7 @@ public class Sale {
 	}
 
 	
-	public void Scan(String barcode) {
+	public void scan(String barcode) {
 		
 			display.showLine(barcode);			
 			String item = hashLookUp.barcode(barcode);			

@@ -11,6 +11,6 @@ package point.of.sale;
 
  	public void showLine(String line) {
  		
-		artR56.showLine(line);
+		artR56.showLine(item);
 	}
 }
