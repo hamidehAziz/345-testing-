@@ -7,26 +7,25 @@ public class Sale {
 	Display display;
 	
 		
-	public Sale (Display display) {
+	public Sale (Display display, HashStorage hashStorage) {
 			
-			init(display);
+			this.display = display;
+			this.hashLookUp = hashStorage;
 	}
 	
 		
 	public Sale () {
 			
-			init(new ArtR56Display());
+			display = new  ArtR56Display();
+			
+			
+			hashLookUp = new HashStorage();		
+			hashLookUp.put("A1", "Milk, 3.99");
+			hashLookUp.put("A2", "Bread, 1.99");
 	}
 	
 		
-	public void init(Display display) {
-			
-			this.display = display;
-				
-			hashLookUp = new HashStorage();		
-			hashLookUp.put("A1", "Milk , 3.99");
-			hashLookUp.put("A2", "Bread , 1.99");
-	}
+	
 
 	
 	public void scan(String barcode) {
