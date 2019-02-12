@@ -20,15 +20,18 @@ public class TestSale {
 	public void testScan() {
 		
 		Display display = mock(Display.class);
+		HashStorage hashStorage = mock(HashStorage.class);
 		
-		Sale sale = new Sale(display);		
+		when(hashStorage.barcode("A1")).thenReturn("Milk, 3.99");
+		
+		Sale sale = new Sale(display, hashStorage);		
 		sale.scan("A1");
 		
-		InOrder inOrder = inOrder(display);
 		
-		//verify(display).showLine("Milk, 3.99");
-		//verify(display).showLine("A1");
+		InOrder inOrder = inOrder(display, hashStorage);
+			
 		inOrder.verify(display).showLine("A1");
+		inOrder.verify(hashStorage).barcode("A1");
 		inOrder.verify(display).showLine("Milk, 3.99");
 	}
 	
