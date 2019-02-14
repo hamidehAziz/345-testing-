@@ -30,8 +30,9 @@ public class TestSale {
 		
 		InOrder inOrder = inOrder(display, hashStorage);
 			
-		inOrder.verify(display).showLine("A1");
+		
 		inOrder.verify(hashStorage).barcode("A1");
+		inOrder.verify(display).showLine("A1");
 		inOrder.verify(display).showLine("Milk, 3.99");
 	}
 	

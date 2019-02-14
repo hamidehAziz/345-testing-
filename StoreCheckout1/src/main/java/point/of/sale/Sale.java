@@ -30,9 +30,16 @@ public class Sale {
 	
 	public void scan(String barcode) {
 		
-			display.showLine(barcode);			
-			String item = hashLookUp.barcode(barcode);			
-			display.showLine(item);
+		//lookup barcode in postgres and get item
+				String item = hashLookUp.barcode(barcode);			
+
+		 		//display the barcode
+				display.showLine(barcode);
+
+
+		 		//display the item			
+				display.showLine(item);			
+			
 		
 	}
 }
