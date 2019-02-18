@@ -29,6 +29,8 @@ public class TestSale {
 		HashStorage hashStorage = mock(HashStorage.class);		
 		when(hashStorage.barcode("A1")).thenReturn("Milk, 3.99");
 		
+
+		//Set it up for barcode(String barcode)
 		ArgumentCaptor<String> argCaptor = ArgumentCaptor.forClass(String.class);
 		
 		Sale sale = new Sale(display, hashStorage);		
@@ -37,11 +39,15 @@ public class TestSale {
 		
 		InOrder inOrder = inOrder(display, hashStorage);			
 		
+		//Capture what was passed to barcode
 		inOrder.verify(hashStorage).barcode(argCaptor.capture());
 		
+		//Use that arg value later to verify what was displayed
 		inOrder.verify(display).showLine(argCaptor.getValue());
 		
 		inOrder.verify(display).showLine("Milk, 3.99");
+		
+		
 	}
 	
 	
